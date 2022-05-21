@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit marks</title>
+</head>
+<body>
+<h3>Edit Student Details of {{Stud.name}}</h3>
+<form method="POST" action="/Update/{{Stud.id}}">
+    {% csrf_token %}
+    Roll no : 
+    <input type="number" name="rnum" value="{{Stud.roll_no}}" required><br>
+    Student Name :
+    <input type="text" name="std" value="{{Stud.name}}" required><br>
+    Marks in Science :
+    <input type="number" name="m1" value="{{Stud.mark1}}" required><br>
+    Marks in Maths :
+    <input type="number" name="m2" value="{{Stud.mark2}}" required><br>
+    Marks in English :
+    <input type="number" name="m3" value="{{Stud.mark3}}" required><br><br>
+    <input type="submit" value="Edit marks">
+    <a href="{% url 'view_marks' %}">
+    <input type="button" value="View data"></a><br/>
+    {% if messages %}
+        {% for result in messages %}
+         <b style="color:green">{{result}}</b>
+        {% endfor %}
+    {% endif %}
+</form>
+</body>
+</html>

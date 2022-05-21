@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Students Details</title>
+</head>
+<body>
+<form method="get">
+    {% csrf_token %}
+    Enter Student id :<input type="text" name="id"><br><br>
+    <input type="submit" name="submit" value="Search"><br><br>
+    {% if mark %}
+    <table border="3px">
+        <tr>
+            <th>Id</th>
+            <th>Student Name</th>
+            <th>Physics</th>
+            <th>Chemistry</th>
+            <th>Mathamatics</th>
+            <th>Total</th>
+            <th>Average</th>
+        </tr>
+      {% for st in mark %}
+        <tr>
+            <td> {{st.id}}</td>
+            <td> {{st.name}}</td>
+            <td> {{st.m1}}</td>
+            <td> {{st.m2}}</td>
+            <td> {{st.m3}}</td>
+            <td>{{st.total_mark}}</td>
+            <td>{{st.avg_mark}}</td>
+          {% endfor %}
+      </tr>
+    </table>
+    {% endif %}
+</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<form action="#" method="get">
+      {% csrf_token %}
+    Enter Title :<input type="text" name="tit"><br><br>
+    <input type="submit" name="submit" value="Search"><br><br>
+      {% if ss %}
+    <table border="3px">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+      {% for st in ss %}
+        <tr>
+            <td> {{st.Title}}</td>
+            <td> {{st.Author}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% endif %}
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marks</title>
+</head>
+<body>
+<h1><b>Students Mark Details</b></h1>
+<form method="POST">
+    {% csrf_token %}
+<table border="1">
+    <tr>
+        <td>Student id</td>
+        <td><input type="number" name="id"></td>
+    </tr>
+    <tr>
+        <td>Student Name</td>
+        <td><input type="text" name="name"></td>
+    </tr>
+     <tr>
+        <td>Physics Mark </td>
+        <td><input type="text" name="m1"></td>
+    </tr>
+    <tr>
+        <td>Chemistry Mark</td>
+        <td><input type="text" name="m2"></td>
+    </tr>
+    <tr>
+        <td>Mathamatics Mark</td>
+        <td><input type="text" name="m3"></td>
+    </tr>
+     <tr>
+        <td>Submit Details</td>
+        <td><button type="submit">Submit</button></td>
+    </tr>
+</table>
+{% if messages %}
+{% for msg in messages %}
+<b>{{msg}}</b>
+{% endfor %}
+{% endif %}
+</form>
+
+</body>
+</html>
