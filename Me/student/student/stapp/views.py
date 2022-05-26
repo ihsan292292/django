@@ -33,8 +33,7 @@ def index(request):
         elif grd_avg > 50:
             grd_avg = "E"
         else:
-            grd_avg = "F"
-        print(grd_avg)
+            grd_avg = "Fail"
 
         std(id=idd, name=namee, m1=m11, m2=m22, m3=m33, total_mark=tot, avg_mark=avg,grade=grd_avg).save(force_insert='__all__')
         messages.success(request,"Data Saved")
@@ -53,16 +52,6 @@ def output(request):
 def view(request):
     if request.method =='GET':
         mark = std.objects.filter(id=request.GET.get('id'))
-    '''o1="O"
-    Ap="A+"
-    a1="A"
-    b1="B"
-    c1="C"
-    d1="D"
-    e1="E"
-    f1="F"
-    std(os=o1,ap=Ap,ag=a1,bg=b1,cg=c1,dg=d1,eg=e1,fail=f1).save(force_insert='__all__')'''
-    
     return render(request,'search.html',{'mark':mark})
 
 ########## View student grade ###########

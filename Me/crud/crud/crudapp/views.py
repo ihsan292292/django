@@ -7,10 +7,6 @@ from .forms import stform
 
 # Create your views here.
 
-def stdisplay(request):
-    result = stud.objects.all()
-    return render(request,'index.html',{"stud":results})
-
 def stinsert(request):
     if request.method == "POST":
         savest = stud()
@@ -29,7 +25,6 @@ def stinsert(request):
 ############## EDIT ##############
 
 def stedit(request,sid):
-    edit = stud()
     getstudata = stud.objects.get(sid=sid)
     return render(request,'edit.html',{"stud":getstudata})
 
@@ -53,3 +48,6 @@ def stdel(request, sid):
     results = stud.objects.all()
     return render(request,"index.html",{"stud": results})
 
+def stdisplay(request):
+    result = stud.objects.all()
+    return render(request,'index.html',{"stud":result})

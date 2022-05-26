@@ -29,12 +29,14 @@
             <td> {{std.m3}}</td>
             <td>{{std.total_mark}}</td>
             <td>{{std.avg_mark}}</td>
-            <td>{{std.grade}}</td>
+            <td {% if std.grade == "Fail"%} style="color:white;background:red" {% endif%} {% if std.grade == "O"%} style="color:white;background:green" {% endif%}>{{std.grade}}</td>
           {% endfor %}
           
             
       </tr>
     </table>
+    <center><a href={% url 'back'%}><input type="button" class="btn btn-primary" value="Back"></a></center>
+
 
     </form>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
