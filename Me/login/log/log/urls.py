@@ -20,7 +20,7 @@ from logapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('Registration',views.reg,name='reg'),
-    path('Login',views.log,name='log'),
-    path('logout',views.logout,name='logout'),
+    path('Registration/',views.reg,name='reg'),
+    path('Login/',views.log,name='log'),
+    path('logout/',views.logout,name='logout'),
 ]
