@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mark Entry</title>
+</head>
+<body>
+<h3>New Student Details</h3>
+<form method="POST">
+    {% csrf_token %}
+    Roll no : 
+    <input type="number" name="rnum" required><br>
+    Student Name :
+    <input type="text" name="std" required><br>
+    Marks in Science :
+    <input type="number" name="m1" required><br>
+    Marks in Maths :
+    <input type="number" name="m2" required><br>
+    Marks in English :
+    <input type="number" name="m3" required><br><br>
+    <input type="submit" value="Submit marks">
+    <a href="">
+    <input type="button" value="View data"></a><br/>
+    {% if messages %}
+        {% for result in messages %}
+         <b style="color:green">{{result}}</b>
+        {% endfor %}
+    {% endif %}
+</form>
+</body>
+</html>

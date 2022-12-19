@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Record</title>
+</head>
+<body>
+ <center>
+     <h3>Add New Student Details</h3>
+     <form method="POST">
+         {% csrf_token %}
+     <table border="1">
+         <tr>
+             <td>Student Id</td>
+             <td><input type="text" name="sid"></td>
+         </tr>
+         <tr>
+             <td>Student Name</td>
+             <td><input type="text" name="sname"></td>
+         </tr>
+         <tr>
+             <td>Address</td>
+             <td><input type="text" name="sadds"></td>
+         </tr>
+         <tr>
+             <td>City</td>
+             <td><input type="text" name="scity"></td>
+         </tr>
+         <tr>
+             <td>Email</td>
+             <td><input type="text" name="semail"></td>
+         </tr>
+         <tr>
+             <td>Phone</td>
+             <td><input type="text" name="sphon"></td>
+         </tr>
+     </table>
+     <input type="submit" Value="Insert Data">
+         <a href="{% url 'stdisplay' %}">Home</a><br/>
+         {% if messages %}
+         {% for result in messages %}
+         <b style="color:green">{{result}}</b>
+         {% endfor %}
+         {% endif %}
+     </form>
+ </center>
+</body>
+</html>

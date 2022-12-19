@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view student</title>
+</head>
+<body>
+<h1>View Student Details</h1>
+<form method="POST">
+    {% csrf_token %}
+    Student Roll no : 
+    <input type="number" name="rnum" required><br>
+    <input type="submit" value="View marks">
+    <a href="">
+        <input type="button" value="Go back"></a><br/>
+</form>
+
+{% if Stud %}
+    <h3>Details of Roll number {{Stud.roll_no}} :</h3>
+    Student Name : {{Stud.name}} <br>
+    Marks in Science : {{Stud.mark1}} <br>
+    Marks in Maths : {{Stud.mark2}} <br>
+    Marks in English : {{Stud.mark3}} <br>
+    Total marks obtained : {{Stud.total_mark}}<br>
+    Average Marks : {{Stud.avg_mark}}<br>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>full marklist</title>
+</head>
+<body>
+<h1>Student Marklist</h1>
+    <table border="1" width="100" height="100">
+        <tr>
+            <th> Roll No </th>
+             <th> Student Name </th>
+             <th> Science </th>
+             <th> Maths </th>
+             <th> English </th>
+             <th> Total Marks </th>
+             <th> Average Marks </th>
+        </tr>
+        {% for displayst in Stud %}
+        <tr>
+            <td>{{displayst.roll_no}}</td>
+            <td>{{displayst.name}}</td>
+            <td>{{displayst.mark1}}</td>
+            <td>{{displayst.mark2}}</td>
+            <td>{{displayst.mark3}}</td>
+            <td>{{displayst.total_mark}}</td>
+            <td>{{displayst.avg_mark}}</td>
+            <td><a href="/Edit/{{displayst.id}}">Edit</a> </td>
+            <td><a href="/Delete/{{displayst.id}}" onclick="return confirm('Are you sure want to delete ?')">Delete</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+  </center>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+<h1>New User Registration</h1>
+<table border="1">
+    <tr>
+        <td>User Name</td>
+        <td><input type="text" name="Username"></td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input type="text" name="Password"></td>
+    </tr>
+
+        <td></td>
+        <td><button type="submit">Register</td>
+</table>
+    {% if messages %}
+    {% for msg in messages %}
+    <b>{{msg}}</b>
+    {% endfor %}
+    {% endif %}
+    <br/>
+    <br/>
+    <em> If you already a  member<a href="{% url 'log'%}">Sign In</a> </em>
+</form>
+</body>
+</html>
